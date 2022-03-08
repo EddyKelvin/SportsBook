@@ -1,5 +1,9 @@
 var stompClient = null;
 
+$(document).ready(function() {
+    connect();
+});
+
 function setConnected(connected) {
     $("#connect").prop("disabled", connected);
     $("#disconnect").prop("disabled", !connected);
@@ -34,7 +38,21 @@ function disconnect() {
 }
 
 function sendName() {
-    stompClient.send("/broadcast/newUpdate", {}, JSON.stringify({'name': $("#event").val(), 'score': $('#score').val()}));
+    let eventName =  $('#event').val();
+    var eventScore = $('#score').val();
+
+    $.ajax({
+        url: 'http://localhost:8080/event',
+        type: 'put',
+        data: {
+            'name' : eventName,
+            'score': eventScore
+        },
+        success: function(res) {
+            stompClient.send("/broadcast/newUpdate", {}, JSON.stringify(res));
+        }
+    })
+
 }
 
 function showEventUpdate(update) {

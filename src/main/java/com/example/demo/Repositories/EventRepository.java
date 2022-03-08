@@ -1,6 +1,6 @@
 package com.example.demo.Repositories;
 
-import com.example.demo.Models.Event;
+import com.example.demo.Entities.Event;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

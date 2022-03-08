@@ -1,6 +1,6 @@
 package com.example.demo.Controllers;
 
-import com.example.demo.Models.Event;
+import com.example.demo.Entities.Event;
 import com.example.demo.Repositories.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
