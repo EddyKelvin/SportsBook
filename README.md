@@ -1,3 +1,3 @@
 # SportsBook
 
-Spring Boot + Mysql + WebSocket
+Spring Boot Maven + Mysql + WebSocket
